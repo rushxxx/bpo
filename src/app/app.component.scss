@@ -1,0 +1,32 @@
+.container {
+  width: 800px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+aside {
+  padding-right: 20px;
+}
+
+.btn {
+  width: 100%;
+  height: 30px;
+  background-color: #ffffff;
+  color: #eb6864;
+  border: none;
+  text-align: left;
+  border-radius: 5px;
+
+  &:hover {
+    border: 1px solid #eb6864;
+    cursor: pointer;
+  }
+
+  &.active {
+    background-color: #eb6864;
+    color: #ffffff;
+  }
+}

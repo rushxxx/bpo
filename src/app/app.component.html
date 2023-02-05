@@ -1,0 +1,32 @@
+<div class="container">
+  <header>
+    <h2>Погода</h2>
+    <hr>
+  </header>
+  <main>
+    <aside>
+      <h3>Выберите город</h3>
+      <ul>
+        <li *ngFor="let town of towns; let index = index">
+          <button
+            type="button"
+            class="btn"
+            [ngClass]="{ 'active' : activeTown === index }"
+            (click)="loadWeather(index)"
+          >{{ town.name }}</button>
+        </li>
+      </ul>
+    </aside>
+    <div class="content" *ngIf="currentWeather">
+      <div>
+        <h4>Погода в населенном пункте {{ currentWeather.name }}</h4>
+      </div>
+      <ul>
+        <li>Температура: {{ currentWeather.main.temp | number: '1.0-0' }} &#8451;</li>
+        <li>Скорость ветра: {{ currentWeather.wind.speed | number: '1.1-1' }} m/c</li>
+      </ul>
+    </div>
+  </main>
+</div>
+
+<router-outlet></router-outlet>
